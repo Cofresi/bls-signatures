@@ -15,6 +15,11 @@ class get_pybind_include(object):
     method can be invoked. """
 
     def __init__(self, user=False):
+        try:
+            import pybind11
+        except ImportError:
+            if subprocess.call([sys.executable, '-m', 'pip', 'install', 'pybind11']):
+                raise RuntimeError('pybind11 install failed.')
         self.user = user
 
     def __str__(self):
@@ -122,7 +127,7 @@ setup(
     long_description='BLS signatures with aggregation. Uses fast c++ implementation. See https://github.com/Chia-Network/bls-signatures for more details',
     license='Apache License',
     python_requires='>=3.7',
-    build_requires=["pybind11"],
+    build_requires=["pybind11>=2.3"],
     ext_modules=ext_modules,
     cmdclass={'build_ext': BuildExt},
     zip_safe=False,
