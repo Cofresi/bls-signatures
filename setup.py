@@ -26,16 +26,16 @@ ext_modules = [
     Extension(
         'blspy',
         [
-            'src/chaincode.cpp'
-            'src/extendedpublickey.cpp'
-            'src/extendedprivatekey.cpp'
-            'src/chaincode.cpp'
-            'src/signature.cpp'
-            'src/publickey.cpp'
-            'src/privatekey.cpp'
-            'src/bls.cpp'
-            'src/aggregationinfo.cpp'
-            'src/threshold.cpp'
+            'src/chaincode.cpp',
+            'src/extendedpublickey.cpp',
+            'src/extendedprivatekey.cpp',
+            'src/chaincode.cpp',
+            'src/signature.cpp',
+            'src/publickey.cpp',
+            'src/privatekey.cpp',
+            'src/bls.cpp',
+            'src/aggregationinfo.cpp',
+            'src/threshold.cpp',
         ],
         include_dirs=[
             # Path to pybind11 headers
@@ -43,7 +43,7 @@ ext_modules = [
             get_pybind_include(user=True),
             'mpir_gc_x64',
             'contrib/relic/include'
-            'contrib/catch'
+            'contrib/catch',
         ],
         library_dirs=['mpir_gc_x64'],
         libraries=['mpir'],
