@@ -128,6 +128,7 @@ setup(
     long_description='BLS signatures with aggregation. Uses fast c++ implementation. See https://github.com/Chia-Network/bls-signatures for more details',
     license='Apache License',
     python_requires='>=3.7',
+    setup_requires=['pybind11>=2.3']
     build_requires=["pybind11>=2.3"],
     ext_modules=ext_modules,
     cmdclass={'build_ext': BuildExt},
