@@ -48,10 +48,11 @@ ext_modules = [
             get_pybind_include(),
             get_pybind_include(user=True),
             'mpir_gc_x64',
+            'relic_x64/include',
             'contrib/relic/include',
             'contrib/catch',
         ],
-        library_dirs=['mpir_gc_x64'],
+        library_dirs=['mpir_gc_x64','relic_x64/lib'],
         libraries=['mpir'],
         language='c++'
     ),
