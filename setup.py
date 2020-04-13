@@ -15,6 +15,7 @@ class get_pybind_include(object):
     method can be invoked. """
 
     def __init__(self, user=False):
+        import subprocess
         try:
             import pybind11
         except ImportError:
